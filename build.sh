@@ -1,4 +1,4 @@
-#bin/bash
+#!/bin/bash
 
 echo "CONFIG_LOCALVERSION=\"$LOCALVERSION\"" >> arch/arm64/configs/$DEVICEDEFCONFIG
 echo "Set CONFIG_LOCALVERSION to: $LOCALVERSION"
