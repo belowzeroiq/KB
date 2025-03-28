@@ -1,0 +1,25 @@
+env:
+    DEFCONFIG: topaz_defconfig
+    KERNELREPO: https://github.com/topnotchfreaks/kernel_msm-5.15 -b clo-common
+    LOCALVERSION: YASK/CLO-BETA
+
+# DONT MODIFY FROM HERE #
+task:
+  name: "KERNEL BUILDER"
+  timeout_in: 120m
+  container:
+      image: apon77/aosp:cirrus
+      cpu: 8
+      memory: 32G
+
+  Setup_script:
+      - ./setup.sh || source setup.sh
+
+  Sync_script:
+      - ./sync.sh || source sync.sh
+
+  Build_script:
+      - ./build.sh || source build.sh
+
+  Upload_script:
+      - ./upload.sh || source upload.sh
